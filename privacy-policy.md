@@ -13,15 +13,19 @@ Simple Tasks ("we", "our", or "the App") is developed by Shuyi Fu. This Privacy 
 - **Image Attachments**: Photos you attach to tasks, stored locally on your device.
 - **Voice Notes**: Audio recordings you attach to tasks, stored locally on your device. Transcriptions are processed on-device using Apple Speech Recognition.
 
+**All data above is created by you and stored only on your device and your personal iCloud account. We do not collect, transmit, or have access to any of this data.**
+
 ### 1.2 Data Processed Automatically
 - **iCloud Sync**: Your data syncs across devices via Apple CloudKit and is stored in your personal iCloud account. We cannot access it.
 - **Purchase Information**: Managed entirely by Apple through StoreKit. We do not collect or store any payment details.
 
 ### 1.3 Data We Do NOT Collect
+**We do not collect any user data.** Specifically:
 - Personal identification information (name, email, phone number, etc.)
 - Analytics, usage data, or crash reports
 - Third-party tracking or advertising data
 - Device identifiers or fingerprints
+- Any data you create in the App
 
 ## 2. How We Use Your Data
 
@@ -106,15 +110,19 @@ If you have any questions, please contact us at:
 - **图片附件**：您附加到任务的照片，存储在您的设备本地。
 - **语音备忘录**：您附加到任务的录音，存储在您的设备本地。语音转文字使用 Apple 语音识别在设备端处理。
 
+**以上所有数据均由您创建，仅存储在您的设备和个人 iCloud 帐户中。我们不收集、传输或访问任何这些数据。**
+
 ### 1.2 自动处理的数据
 - **iCloud 同步**：您的数据通过 Apple CloudKit 在设备间同步，存储在您个人的 iCloud 帐户中，我们无法访问。
 - **购买信息**：完全由 Apple 通过 StoreKit 管理，我们不收集或存储任何支付信息。
 
 ### 1.3 我们不收集的数据
+**我们不收集任何用户数据。**具体包括：
 - 个人身份信息（姓名、邮箱、手机号等）
 - 分析数据、使用数据或崩溃报告
 - 第三方追踪或广告数据
 - 设备标识符或指纹信息
+- 您在应用中创建的任何数据
 
 ## 2. 我们如何使用您的数据
 

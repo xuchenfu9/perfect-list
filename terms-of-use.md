@@ -2,7 +2,7 @@
 
 **Effective Date: February 21, 2026**
 
-Please read these Terms of Use ("Terms") carefully before using Simple Tasks ("the App"), developed by Xuchen Fu ("we", "us", or "our").
+Please read these Terms of Use ("Terms") carefully before using Simple Tasks ("the App"), developed by Shuyi Fu ("we", "us", or "our").
 
 By downloading, installing, or using the App, you agree to be bound by these Terms.
 
@@ -105,7 +105,7 @@ If you have any questions about these Terms, please contact us at:
 
 **生效日期：2026 年 2 月 21 日**
 
-请在使用任务清单（以下简称"本应用"）之前仔细阅读本使用条款（以下简称"条款"）。本应用由付旭晨（以下简称"我们"）开发。
+请在使用任务清单（以下简称"本应用"）之前仔细阅读本使用条款（以下简称"条款"）。本应用由付书艺（以下简称"我们"）开发。
 
 下载、安装或使用本应用即表示您同意受本条款约束。
 
