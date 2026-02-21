@@ -4,92 +4,67 @@
 
 Simple Tasks ("we", "our", or "the App") is developed by Shuyi Fu. This Privacy Policy explains how we handle your information when you use our App.
 
-## 1. Information We Collect
+## 1. We Do Not Collect Your Data
 
-### 1.1 Data You Create
-- **Task Data**: Task titles, descriptions, priorities, due dates, categories, and completion status.
-- **Habit Data**: Habit names, icons, frequencies, and check-in records.
-- **Location Data**: Location name and coordinates attached to a task, only when you explicitly set it. We do not track your location in the background.
-- **Image Attachments**: Photos you attach to tasks, stored locally on your device.
-- **Voice Notes**: Audio recordings you attach to tasks, stored locally on your device. Transcriptions are processed on-device using Apple Speech Recognition.
+**Simple Tasks is designed with privacy in mind. We do not collect, store, or transmit any of your personal data to our servers. In fact, we do not operate any servers.**
 
-**All data above is created by you and stored only on your device and your personal iCloud account. We do not collect, transmit, or have access to any of this data.**
+All data you create in the App (tasks, habits, photos, voice notes, etc.) is stored:
+- Locally on your device
+- In your personal iCloud account (if iCloud sync is enabled)
 
-### 1.2 Data Processed Automatically
-- **iCloud Sync**: Your data syncs across devices via Apple CloudKit and is stored in your personal iCloud account. We cannot access it.
-- **Purchase Information**: Managed entirely by Apple through StoreKit. We do not collect or store any payment details.
+**We have no access to your data.**
 
-### 1.3 Data We Do NOT Collect
-**We do not collect any user data.** Specifically:
-- Personal identification information (name, email, phone number, etc.)
-- Analytics, usage data, or crash reports
-- Third-party tracking or advertising data
-- Device identifiers or fingerprints
-- Any data you create in the App
+## 2. Data You Create
 
-## 2. How We Use Your Data
+The following data is created and controlled entirely by you:
+- **Task Data**: Titles, descriptions, priorities, due dates, categories, completion status
+- **Habit Data**: Names, icons, frequencies, check-in records
+- **Location Data**: Only saved when you explicitly attach a location to a task
+- **Image Attachments**: Photos stored locally on your device
+- **Voice Notes**: Audio recordings stored locally; transcription is processed on-device
 
-All data is used solely to provide the App's core functionality:
+## 3. Third-Party Services
 
-- Display and manage your tasks and habits
-- Sync data across your Apple devices via iCloud
-- Create calendar events when you set a due date
-- Display tasks in home screen widgets
-- Share or back up tasks when you initiate it
+The App only uses Apple's built-in services:
+- **Apple iCloud (CloudKit)** — Syncs your data across your own devices
+- **Apple StoreKit** — Handles in-app purchases (we don't see payment details)
+- **Apple EventKit** — Calendar integration
+- **Apple MapKit** — Location search
+- **Apple Speech Framework** — On-device voice-to-text
+- **Apple AlarmKit (iOS 26+)** — Alarm-style reminders
 
-## 3. Data Storage and Security
-
-- All data is stored **locally on your device** using Apple's SwiftData framework.
-- If iCloud is enabled, data syncs through **Apple CloudKit**, encrypted in transit and at rest by Apple.
-- We do **not** operate any servers or databases and have **no access** to your data.
-- Exported backup files are stored wherever you choose to save them.
+**No third-party analytics, advertising, or tracking services are used.**
 
 ## 4. System Permissions
 
-The App may request the following optional permissions:
+The App may request these optional permissions:
+- **Calendar**: Sync tasks to your system calendar
+- **Location**: Attach locations to tasks
+- **iCloud**: Sync across your Apple devices
+- **Notifications**: Receive reminders
+- **Photo Library**: Attach photos to tasks
+- **Camera (iOS)**: Take photos for tasks
+- **Microphone**: Record voice notes
+- **Speech Recognition**: Convert voice to text (on-device)
+- **Alarms (iOS 26+)**: Play sounds in Silent/Focus Mode
 
-- **Calendar**: Sync tasks with due dates to your system calendar
-- **Location**: Attach a location to a task for navigation
-- **iCloud**: Sync data across your Apple devices
-- **Notifications**: Receive updates when data changes on another device
-- **Photo Library**: Select photos from your library to attach to tasks
-- **Camera** (iOS): Take photos to attach to tasks
-- **Microphone**: Record voice notes to attach to tasks
-- **Speech Recognition**: Convert voice recordings to text (processed on-device when available)
-- **Alarms** (iOS 26+): Play reminder sounds even in Silent Mode or Focus Mode
+All permissions are optional. You can revoke them anytime in Settings.
 
-You can revoke any permission at any time in your device's Settings.
+## 5. Children's Privacy
 
-## 5. Third-Party Services
+Since we don't collect any personal data, the App is safe for users of all ages.
 
-The App only uses Apple's built-in services:
+## 6. Data Deletion
 
-- **Apple iCloud (CloudKit)** — Cross-device data sync
-- **Apple StoreKit** — In-app purchase and subscription management
-- **Apple EventKit** — Calendar integration
-- **Apple MapKit** — Location search for tasks
-- **Apple Speech Framework** — On-device voice-to-text transcription
-- **Apple AlarmKit** (iOS 26+) — Alarm-style reminders
+- Delete tasks and habits directly in the App
+- Uninstalling removes all local data
+- iCloud data: Settings > Apple ID > iCloud > Manage Storage
 
-No third-party analytics, advertising, or tracking services are used.
+## 7. Changes to This Policy
 
-## 6. Children's Privacy
+Updates will be reflected by changing the "Effective Date" above.
 
-The App does not collect personal information from any user, making it safe for users of all ages.
-
-## 7. Data Deletion
-
-- Delete individual tasks (trash first, then permanent delete) or habits and their records.
-- Uninstalling the App removes all locally stored data.
-- To remove iCloud data: **Settings > Apple ID > iCloud > Manage Storage** on your device.
-
-## 8. Changes to This Policy
-
-We may update this Privacy Policy from time to time. Changes will be reflected by updating the "Effective Date" above. Continued use of the App after changes constitutes acceptance.
-
-## 9. Contact Us
-
-If you have any questions, please contact us at:
+## 8. Contact Us
 
 **Email**: fxcpxs@163.com
 
@@ -101,91 +76,66 @@ If you have any questions, please contact us at:
 
 任务清单（以下简称"本应用"）由付书艺开发。本隐私政策说明了您使用本应用时，我们如何处理您的信息。
 
-## 1. 我们收集的信息
+## 1. 我们不收集您的数据
 
-### 1.1 您创建的数据
-- **任务数据**：任务标题、描述、优先级、截止日期、分类和完成状态。
-- **习惯数据**：习惯名称、图标、频率和打卡记录。
-- **位置数据**：仅当您主动为任务设置位置时，才会保存位置名称和坐标。本应用不会在后台追踪您的位置。
-- **图片附件**：您附加到任务的照片，存储在您的设备本地。
-- **语音备忘录**：您附加到任务的录音，存储在您的设备本地。语音转文字使用 Apple 语音识别在设备端处理。
+**任务清单在设计时充分考虑了隐私保护。我们不收集、存储或传输您的任何个人数据到我们的服务器。事实上，我们根本没有运营任何服务器。**
 
-**以上所有数据均由您创建，仅存储在您的设备和个人 iCloud 帐户中。我们不收集、传输或访问任何这些数据。**
+您在应用中创建的所有数据（任务、习惯、照片、语音备忘录等）仅存储在：
+- 您的设备本地
+- 您个人的 iCloud 帐户（如果开启了 iCloud 同步）
 
-### 1.2 自动处理的数据
-- **iCloud 同步**：您的数据通过 Apple CloudKit 在设备间同步，存储在您个人的 iCloud 帐户中，我们无法访问。
-- **购买信息**：完全由 Apple 通过 StoreKit 管理，我们不收集或存储任何支付信息。
+**我们无法访问您的数据。**
 
-### 1.3 我们不收集的数据
-**我们不收集任何用户数据。**具体包括：
-- 个人身份信息（姓名、邮箱、手机号等）
-- 分析数据、使用数据或崩溃报告
-- 第三方追踪或广告数据
-- 设备标识符或指纹信息
-- 您在应用中创建的任何数据
+## 2. 您创建的数据
 
-## 2. 我们如何使用您的数据
+以下数据完全由您创建和控制：
+- **任务数据**：标题、描述、优先级、截止日期、分类、完成状态
+- **习惯数据**：名称、图标、频率、打卡记录
+- **位置数据**：仅当您主动为任务设置位置时才会保存
+- **图片附件**：存储在您设备本地的照片
+- **语音备忘录**：存储在本地的录音；语音转文字在设备端处理
 
-所有数据仅用于提供应用核心功能：
+## 3. 第三方服务
 
-- 显示和管理您的任务与习惯
-- 通过 iCloud 在设备间同步数据
-- 设置截止日期时创建日历事件
-- 在主屏幕小组件中显示任务
-- 您发起分享或备份时导出任务
+本应用仅使用 Apple 内置服务：
+- **Apple iCloud (CloudKit)** — 在您自己的设备间同步数据
+- **Apple StoreKit** — 处理应用内购买（我们看不到支付信息）
+- **Apple EventKit** — 日历集成
+- **Apple MapKit** — 位置搜索
+- **Apple Speech Framework** — 设备端语音转文字
+- **Apple AlarmKit（iOS 26+）** — 闹钟式提醒
 
-## 3. 数据存储与安全
-
-- 所有数据使用 Apple SwiftData 框架**存储在您的设备本地**。
-- 开启 iCloud 后，数据通过 **Apple CloudKit** 同步，传输和存储均由 Apple 加密。
-- 我们**不**运营任何服务器或数据库，**无法访问**您的数据。
-- 导出的备份文件存储在您选择的位置。
+**不使用任何第三方分析、广告或追踪服务。**
 
 ## 4. 系统权限
 
 本应用可能请求以下可选权限：
+- **日历**：将任务同步到系统日历
+- **位置**：为任务附加位置
+- **iCloud**：在 Apple 设备间同步
+- **通知**：接收提醒
+- **照片图库**：为任务附加照片
+- **相机（iOS）**：拍照添加到任务
+- **麦克风**：录制语音备忘录
+- **语音识别**：语音转文字（设备端处理）
+- **闹钟（iOS 26+）**：在静音/专注模式下播放提醒声音
 
-- **日历**：将带截止日期的任务同步到系统日历
-- **位置**：为任务附加位置以便导航
-- **iCloud**：在 Apple 设备间同步数据
-- **通知**：其他设备数据变化时接收更新
-- **照片图库**：从相册选择照片附加到任务
-- **相机**（iOS）：拍照附加到任务
-- **麦克风**：录制语音备忘录附加到任务
-- **语音识别**：将语音录音转换为文字（优先在设备端处理）
-- **闹钟**（iOS 26+）：在静音模式或专注模式下播放提醒声音
+所有权限都是可选的，您可以随时在设置中撤销。
 
-您可以随时在设备的"设置"中撤销任何权限。
+## 5. 儿童隐私
 
-## 5. 第三方服务
+由于我们不收集任何个人数据，本应用适合所有年龄段用户使用。
 
-本应用仅使用 Apple 内置服务：
+## 6. 数据删除
 
-- **Apple iCloud (CloudKit)** — 跨设备数据同步
-- **Apple StoreKit** — 应用内购买与订阅管理
-- **Apple EventKit** — 日历集成
-- **Apple MapKit** — 任务位置搜索
-- **Apple Speech Framework** — 设备端语音转文字
-- **Apple AlarmKit**（iOS 26+）— 闹钟式提醒
+- 在应用内直接删除任务和习惯
+- 卸载应用将删除所有本地数据
+- iCloud 数据：设置 > Apple ID > iCloud > 管理储存空间
 
-不使用任何第三方分析、广告或追踪服务。
+## 7. 政策变更
 
-## 6. 儿童隐私
+更新将通过修改顶部"生效日期"体现。
 
-本应用不收集任何用户的个人信息，适合所有年龄段用户使用。
-
-## 7. 数据删除
-
-- 可删除单个任务（先进入回收站，再永久删除）或删除习惯及其打卡记录。
-- 卸载应用将删除所有本地数据。
-- 删除 iCloud 数据：设备上进入 **设置 > Apple ID > iCloud > 管理储存空间**。
-
-## 8. 政策变更
-
-我们可能不时更新本隐私政策，变更将通过更新顶部"生效日期"体现。继续使用本应用即表示接受更新后的政策。
-
-## 9. 联系我们
-
-如有任何疑问，请联系我们：
+## 8. 联系我们
 
 **邮箱**：fxcpxs@163.com
