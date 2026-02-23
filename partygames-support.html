@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Games 技术支持</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eee;
+        }
+        h3 {
+            color: #555;
+            font-size: 1.1em;
+            margin: 20px 0 10px 0;
+        }
+        p { margin-bottom: 15px; }
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        li { margin-bottom: 8px; }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        .faq-item strong {
+            color: #667eea;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        .tip {
+            background: #d4edda;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .contact-box h2 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+        .contact-box a {
+            color: white;
+            text-decoration: underline;
+        }
+        .email-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+        .email-btn:hover {
+            transform: scale(1.05);
+        }
+        a { color: #667eea; }
+        .game-card {
+            background: white;
+            border: 2px solid #eee;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .game-card h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        .requirements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .req-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .req-item .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .link-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .link-btn:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Party Games 技术支持</h1>
+        <p class="subtitle">欢迎使用 Party Games！如果您在使用过程中遇到任何问题，请参考以下信息。</p>
+
+        <h2>📱 关于应用</h2>
+        <p>Party Games 是一款本地多人派对游戏合集，包含多种游戏模式：点球大战、快枪手、俄罗斯轮盘、幸运转盘、翻扑克牌、摸高挑战和手指炸弹。</p>
+        <p><strong>当前版本：</strong>1.0.2</p>
+
+        <h2>💻 系统要求</h2>
+        <div class="requirements">
+            <div class="req-item">
+                <div class="icon">📱</div>
+                <strong>设备</strong>
+                <p>iPhone、iPad</p>
+            </div>
+            <div class="req-item">
+                <div class="icon">⚙️</div>
+                <strong>系统</strong>
+                <p>iOS 15.0+</p>
+            </div>
+            <div class="req-item">
+                <div class="icon">📶</div>
+                <strong>网络</strong>
+                <p>Wi-Fi 或蓝牙</p>
+            </div>
+            <div class="req-item">
+                <div class="icon">💾</div>
+                <strong>存储</strong>
+                <p>约 50 MB</p>
+            </div>
+        </div>
+
+        <h2>❓ 常见问题</h2>
+
+        <h3>连接问题</h3>
+        <div class="faq-item">
+            <p><strong>Q: 无法找到其他玩家怎么办？</strong></p>
+            <p>A: 请确保：</p>
+            <ul>
+                <li>所有设备都连接到同一个 Wi-Fi 网络</li>
+                <li>已授予应用本地网络和蓝牙权限</li>
+                <li>所有设备都已打开应用并进入同一游戏模式</li>
+                <li>关闭 VPN 或代理服务</li>
+                <li>重启应用或设备</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <p><strong>Q: 连接经常断开怎么办？</strong></p>
+            <p>A: 建议：</p>
+            <ul>
+                <li>确保设备距离不要太远</li>
+                <li>检查 Wi-Fi 信号强度</li>
+                <li>关闭其他占用网络的应用</li>
+                <li>确保设备电量充足</li>
+            </ul>
+        </div>
+
+        <h3>权限问题</h3>
+        <div class="faq-item">
+            <p><strong>Q: 为什么需要蓝牙/本地网络权限？</strong></p>
+            <p>A: 这些权限用于在本地网络中发现和连接其他玩家设备，实现多人游戏功能。我们不收集任何个人数据。</p>
+        </div>
+
+        <div class="tip">
+            <p><strong>💡 如何授予权限？</strong></p>
+            <p>前往 iOS 设置 > Party Games，开启所需权限。</p>
+        </div>
+
+        <h3>游戏玩法</h3>
+        <div class="game-card">
+            <h4>⚽ 点球大战</h4>
+            <p>两人轮流扮演守门员和射手。守门员先秘密选择扑救方向，吹哨后射手选择射门方向。方向一致则扑出，不一致则进球。</p>
+        </div>
+
+        <div class="game-card">
+            <h4>🎰 俄罗斯轮盘</h4>
+            <p>摇晃设备来"开枪"，看谁的运气更好。这是一个刺激的运气游戏。</p>
+        </div>
+
+        <div class="game-card">
+            <h4>🎡 幸运转盘</h4>
+            <p>旋转转盘，看指针停在哪个区域，可用于随机决策或抽奖。</p>
+        </div>
+
+        <div class="game-card">
+            <h4>🃏 扑克翻牌</h4>
+            <p>30张牌中藏有炸弹牌，玩家轮流翻牌，翻到炸弹就输了。</p>
+        </div>
+
+        <div class="game-card">
+            <h4>📏 摸高挑战</h4>
+            <p>测试你的反应速度，看谁能跳得更高更快。</p>
+        </div>
+
+        <div class="game-card">
+            <h4>💣 手指炸弹</h4>
+            <p>倒计时炸弹随机传递，手指按住屏幕接力，炸弹在谁手里爆炸谁就输了。</p>
+        </div>
+
+        <h3>技术问题</h3>
+        <div class="faq-item">
+            <p><strong>Q: 应用闪退怎么办？</strong></p>
+            <p>A: 请尝试：</p>
+            <ol>
+                <li>完全关闭应用后重新打开</li>
+                <li>重启设备</li>
+                <li>检查是否有应用更新</li>
+                <li>如果问题持续，请联系技术支持</li>
+            </ol>
+        </div>
+
+        <div class="faq-item">
+            <p><strong>Q: 游戏卡顿或延迟？</strong></p>
+            <p>A: 建议：</p>
+            <ul>
+                <li>关闭后台运行的其他应用</li>
+                <li>确保设备有足够的存储空间</li>
+                <li>检查 Wi-Fi 连接质量</li>
+                <li>更新到最新版本</li>
+            </ul>
+        </div>
+
+        <h3>隐私与安全</h3>
+        <div class="highlight">
+            <p><strong>🔒 我们重视您的隐私</strong></p>
+            <ul>
+                <li>不收集任何个人身份信息</li>
+                <li>不使用第三方追踪服务</li>
+                <li>所有游戏数据仅存储在本地</li>
+            </ul>
+        </div>
+
+        <div class="contact-box">
+            <h2>📧 联系技术支持</h2>
+            <p>如果以上信息无法解决您的问题，请通过邮件联系我们：</p>
+            <a href="mailto:fxcpxs@163.com" class="email-btn">fxcpxs@163.com</a>
+            <p style="margin-top: 15px; font-size: 0.9em;">⏰ 通常在 24-48 小时内回复</p>
+        </div>
+
+        <div class="highlight">
+            <h3>📝 提交问题时请包含以下信息</h3>
+            <ul>
+                <li>设备型号（如 iPhone 14 Pro）</li>
+                <li>iOS 版本（如 iOS 17.2）</li>
+                <li>应用版本</li>
+                <li>问题的详细描述</li>
+                <li>问题发生的步骤</li>
+                <li>截图或录屏（如适用）</li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <a href="partygames-privacy-policy.html" class="link-btn">🔒 隐私政策</a>
+            <a href="partygames-terms-of-service.html" class="link-btn">📜 使用条款</a>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; color: #666;">
+            感谢您使用 Party Games！<br>
+            我们致力于为您提供最佳的游戏体验。
+        </p>
+    </div>
+</body>
+</html>
