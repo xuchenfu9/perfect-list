@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="我的书签 - 简洁高效的网页书签管理工具">
+    <title>我的书签 - 智能书签管理工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .lang-switcher {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .lang-switcher select {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: 2px solid white;
+            border-radius: 30px;
+            background: white;
+            color: #667eea;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .lang-switcher select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: #f8f9ff;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .feature-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .pricing {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #667eea;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .pricing-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 40px 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .pricing-card.premium {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.premium li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            header p { font-size: 1.1em; }
+            .features h2, .pricing h2 { font-size: 2em; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select id="langSelect" onchange="switchLanguage()">
+            <option value="zh-Hans">简体中文</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="th">ไทย</option>
+            <option value="it">Italiano</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 data-i18n="title">📚 我的书签</h1>
+            <p data-i18n="subtitle">简洁、高效、安全的网页书签管理工具<br>让每一个网址都井井有条</p>
+        </header>
+
+        <section class="features">
+            <h2 data-i18n="features_title">核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📁</div>
+                    <h3 data-i18n="feature1_title">智能分类管理</h3>
+                    <p data-i18n="feature1_desc">自由创建分类，支持拖拽排序，轻松归类工作、学习、生活、娱乐等各类书签</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-i18n="feature2_title">隐私安全保护</h3>
+                    <p data-i18n="feature2_desc">支持面容ID/指纹解锁私密分类，敏感书签单独加密，保护你的浏览隐私</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">☁️</div>
+                    <h3 data-i18n="feature3_title">iCloud自动同步</h3>
+                    <p data-i18n="feature3_desc">数据实时云端备份，多设备无缝切换，换手机也不丢失书签</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3 data-i18n="feature4_title">多书签二维码分享</h3>
+                    <p data-i18n="feature4_desc">一键生成二维码图片，可同时分享多个书签，扫码即可快速保存</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌍</div>
+                    <h3 data-i18n="feature5_title">多语言全局支持</h3>
+                    <p data-i18n="feature5_desc">支持简体中文、繁体中文、English、日本語、한국어、ไทย、Italiano、Deutsch</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3 data-i18n="feature6_title">个性化阅读体验</h3>
+                    <p data-i18n="feature6_desc">自由调节字体大小、风格，打造属于你的舒适使用界面</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <h2 data-i18n="pricing_title">选择适合你的版本</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 data-i18n="free_title">免费版</h3>
+                    <div class="price" data-i18n="free_price">¥0</div>
+                    <ul>
+                        <li data-i18n="free_feat1">✓ 20个普通书签</li>
+                        <li data-i18n="free_feat2">✓ 3个私密书签</li>
+                        <li data-i18n="free_feat3">✓ 基础分类管理</li>
+                        <li data-i18n="free_feat4">✓ iCloud同步</li>
+                        <li data-i18n="free_feat5">✓ 二维码分享</li>
+                    </ul>
+                </div>
+                <div class="pricing-card premium">
+                    <h3 data-i18n="premium_title">会员版</h3>
+                    <div class="price" data-i18n="premium_price">升级解锁</div>
+                    <ul>
+                        <li data-i18n="premium_feat1">✓ 无限书签</li>
+                        <li data-i18n="premium_feat2">✓ 无限私密分类</li>
+                        <li data-i18n="premium_feat3">✓ 更多个性化主题</li>
+                        <li data-i18n="premium_feat4">✓ 批量导入导出</li>
+                        <li data-i18n="premium_feat5">✓ 优先技术支持</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 style="margin-bottom: 30px;" data-i18n="cta_title">立即开始整理你的书签</h2>
+            <a href="https://apps.apple.com/app/id6758990165" class="cta-button" data-i18n="download_btn">App Store 下载</a>
+        </section>
+
+        <footer>
+            <p data-i18n="footer1">© 2024 我的书签. 简单、干净、无广告</p>
+            <p style="margin-top: 10px;" data-i18n="footer2">专注帮你更好地管理网页收藏</p>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            'zh-Hans': {
+                title: '📚 我的书签',
+                subtitle: '简洁、高效、安全的网页书签管理工具<br>让每一个网址都井井有条',
+                features_title: '核心功能',
+                feature1_title: '智能分类管理',
+                feature1_desc: '自由创建分类，支持拖拽排序，轻松归类工作、学习、生活、娱乐等各类书签',
+                feature2_title: '隐私安全保护',
+                feature2_desc: '支持面容ID/指纹解锁私密分类，敏感书签单独加密，保护你的浏览隐私',
+                feature3_title: 'iCloud自动同步',
+                feature3_desc: '数据实时云端备份，多设备无缝切换，换手机也不丢失书签',
+                feature4_title: '多书签二维码分享',
+                feature4_desc: '一键生成二维码图片，可同时分享多个书签，扫码即可快速保存',
+                feature5_title: '多语言全局支持',
+                feature5_desc: '支持简体中文、繁体中文、English、日本語、한국어、ไทย、Italiano、Deutsch',
+                feature6_title: '个性化阅读体验',
+                feature6_desc: '自由调节字体大小、风格，打造属于你的舒适使用界面',
+                pricing_title: '选择适合你的版本',
+                free_title: '免费版',
+                free_price: '¥0',
+                free_feat1: '✓ 20个普通书签',
+                free_feat2: '✓ 3个私密书签',
+                free_feat3: '✓ 基础分类管理',
+                free_feat4: '✓ iCloud同步',
+                free_feat5: '✓ 二维码分享',
+                premium_title: '会员版',
+                premium_price: '升级解锁',
+                premium_feat1: '✓ 无限书签',
+                premium_feat2: '✓ 无限私密分类',
+                premium_feat3: '✓ 更多个性化主题',
+                premium_feat4: '✓ 批量导入导出',
+                premium_feat5: '✓ 优先技术支持',
+                cta_title: '立即开始整理你的书签',
+                download_btn: 'App Store 下载',
+                footer1: '© 2024 我的书签. 简单、干净、无广告',
+                footer2: '专注帮你更好地管理网页收藏'
+            },
+            'zh-Hant': {
+                title: '📚 我的書籤',
+                subtitle: '簡潔、高效、安全的網頁書籤管理工具<br>讓每一個網址都井井有條',
+                features_title: '核心功能',
+                feature1_title: '智能分類管理',
+                feature1_desc: '自由創建分類，支持拖拽排序，輕鬆歸類工作、學習、生活、娛樂等各類書籤',
+                feature2_title: '隱私安全保護',
+                feature2_desc: '支持面容ID/指紋解鎖私密分類，敏感書籤單獨加密，保護你的瀏覽隱私',
+                feature3_title: 'iCloud自動同步',
+                feature3_desc: '數據實時雲端備份，多設備無縫切換，換手機也不丟失書籤',
+                feature4_title: '多書籤二維碼分享',
+                feature4_desc: '一鍵生成二維碼圖片，可同時分享多個書籤，掃碼即可快速保存',
+                feature5_title: '多語言全局支持',
+                feature5_desc: '支持簡體中文、繁體中文、English、日本語、한국어、ไทย、Italiano、Deutsch',
+                feature6_title: '個性化閱讀體驗',
+                feature6_desc: '自由調節字體大小、風格，打造屬於你的舒適使用界面',
+                pricing_title: '選擇適合你的版本',
+                free_title: '免費版',
+                free_price: '¥0',
+                free_feat1: '✓ 20個普通書籤',
+                free_feat2: '✓ 3個私密書籤',
+                free_feat3: '✓ 基礎分類管理',
+                free_feat4: '✓ iCloud同步',
+                free_feat5: '✓ 二維碼分享',
+                premium_title: '會員版',
+                premium_price: '升級解鎖',
+                premium_feat1: '✓ 無限書籤',
+                premium_feat2: '✓ 無限私密分類',
+                premium_feat3: '✓ 更多個性化主題',
+                premium_feat4: '✓ 批量導入導出',
+                premium_feat5: '✓ 優先技術支持',
+                cta_title: '立即開始整理你的書籤',
+                download_btn: 'App Store 下載',
+                footer1: '© 2024 我的書籤. 簡單、乾淨、無廣告',
+                footer2: '專注幫你更好地管理網頁收藏'
+            },
+            'en': {
+                title: '📚 My Bookmarks',
+                subtitle: 'Simple, efficient, and secure bookmark manager<br>Keep all your URLs organized',
+                features_title: 'Core Features',
+                feature1_title: 'Smart Category Management',
+                feature1_desc: 'Create categories freely with drag-and-drop sorting for work, study, life, and entertainment',
+                feature2_title: 'Privacy & Security',
+                feature2_desc: 'Face ID/fingerprint unlock for private categories, encrypted sensitive bookmarks',
+                feature3_title: 'iCloud Auto Sync',
+                feature3_desc: 'Real-time cloud backup, seamless device switching, never lose your bookmarks',
+                feature4_title: 'Multi-Bookmark QR Sharing',
+                feature4_desc: 'Generate QR code images with one tap, share multiple bookmarks simultaneously',
+                feature5_title: 'Multi-Language Support',
+                feature5_desc: 'Supports Simplified Chinese, Traditional Chinese, English, 日本語, 한국어, ไทย, Italiano, Deutsch',
+                feature6_title: 'Personalized Experience',
+                feature6_desc: 'Adjust font size and style freely to create your comfortable interface',
+                pricing_title: 'Choose Your Plan',
+                free_title: 'Free',
+                free_price: '$0',
+                free_feat1: '✓ 20 regular bookmarks',
+                free_feat2: '✓ 3 private bookmarks',
+                free_feat3: '✓ Basic category management',
+                free_feat4: '✓ iCloud sync',
+                free_feat5: '✓ QR code sharing',
+                premium_title: 'Premium',
+                premium_price: 'Upgrade',
+                premium_feat1: '✓ Unlimited bookmarks',
+                premium_feat2: '✓ Unlimited private categories',
+                premium_feat3: '✓ More themes',
+                premium_feat4: '✓ Batch import/export',
+                premium_feat5: '✓ Priority support',
+                cta_title: 'Start Organizing Your Bookmarks',
+                download_btn: 'Download on App Store',
+                footer1: '© 2024 My Bookmarks. Simple, clean, ad-free',
+                footer2: 'Focused on better bookmark management'
+            },
+            'ja': {
+                title: '📚 マイブックマーク',
+                subtitle: 'シンプル、効率的、安全なブックマーク管理ツール<br>すべてのURLを整理整頓',
+                features_title: 'コア機能',
+                feature1_title: 'スマートカテゴリ管理',
+                feature1_desc: '自由にカテゴリを作成、ドラッグ&ドロップで並び替え、仕事、学習、生活、娯楽などを簡単に分類',
+                feature2_title: 'プライバシー保護',
+                feature2_desc: 'Face ID/指紋認証でプライベートカテゴリをロック、機密ブックマークを個別に暗号化',
+                feature3_title: 'iCloud自動同期',
+                feature3_desc: 'リアルタイムクラウドバックアップ、複数デバイス間でシームレスに切り替え',
+                feature4_title: '複数ブックマークQR共有',
+                feature4_desc: 'ワンタップでQRコード画像を生成、複数のブックマークを同時に共有',
+                feature5_title: '多言語対応',
+                feature5_desc: '簡体字中国語、繁体字中国語、English、日本語、한국어、ไทย、Italiano、Deutschに対応',
+                feature6_title: 'パーソナライズ体験',
+                feature6_desc: 'フォントサイズやスタイルを自由に調整して、快適なインターフェースを作成',
+                pricing_title: 'プランを選択',
+                free_title: '無料版',
+                free_price: '¥0',
+                free_feat1: '✓ 通常ブックマーク20件',
+                free_feat2: '✓ プライベートブックマーク3件',
+                free_feat3: '✓ 基本カテゴリ管理',
+                free_feat4: '✓ iCloud同期',
+                free_feat5: '✓ QRコード共有',
+                premium_title: 'プレミアム版',
+                premium_price: 'アップグレード',
+                premium_feat1: '✓ 無制限ブックマーク',
+                premium_feat2: '✓ 無制限プライベートカテゴリ',
+                premium_feat3: '✓ より多くのテーマ',
+                premium_feat4: '✓ 一括インポート/エクスポート',
+                premium_feat5: '✓ 優先サポート',
+                cta_title: 'ブックマークの整理を始めましょう',
+                download_btn: 'App Storeでダウンロード',
+                footer1: '© 2024 マイブックマーク. シンプル、クリーン、広告なし',
+                footer2: 'より良いブックマーク管理に専念'
+            },
+            'ko': {
+                title: '📚 내 북마크',
+                subtitle: '간단하고 효율적이며 안전한 북마크 관리 도구<br>모든 URL을 체계적으로 정리',
+                features_title: '핵심 기능',
+                feature1_title: '스마트 카테고리 관리',
+                feature1_desc: '자유롭게 카테고리 생성, 드래그 앤 드롭 정렬, 업무, 학습, 생활, 엔터테인먼트 등 쉽게 분류',
+                feature2_title: '개인정보 보호',
+                feature2_desc: 'Face ID/지문 인식으로 개인 카테고리 잠금, 민감한 북마크 개별 암호화',
+                feature3_title: 'iCloud 자동 동기화',
+                feature3_desc: '실시간 클라우드 백업, 여러 기기 간 원활한 전환, 북마크 손실 없음',
+                feature4_title: '다중 북마크 QR 공유',
+                feature4_desc: '원탭으로 QR 코드 이미지 생성, 여러 북마크 동시 공유',
+                feature5_title: '다국어 지원',
+                feature5_desc: '简体中文, 繁體中文, English, 日本語, 한국어, ไทย, Italiano, Deutsch 지원',
+                feature6_title: '개인화된 경험',
+                feature6_desc: '글꼴 크기와 스타일을 자유롭게 조정하여 편안한 인터페이스 구성',
+                pricing_title: '플랜 선택',
+                free_title: '무료 버전',
+                free_price: '₩0',
+                free_feat1: '✓ 일반 북마크 20개',
+                free_feat2: '✓ 개인 북마크 3개',
+                free_feat3: '✓ 기본 카테고리 관리',
+                free_feat4: '✓ iCloud 동기화',
+                free_feat5: '✓ QR 코드 공유',
+                premium_title: '프리미엄 버전',
+                premium_price: '업그레이드',
+                premium_feat1: '✓ 무제한 북마크',
+                premium_feat2: '✓ 무제한 개인 카테고리',
+                premium_feat3: '✓ 더 많은 테마',
+                premium_feat4: '✓ 일괄 가져오기/내보내기',
+                premium_feat5: '✓ 우선 지원',
+                cta_title: '북마크 정리 시작하기',
+                download_btn: 'App Store에서 다운로드',
+                footer1: '© 2024 내 북마크. 간단하고 깔끔하며 광고 없음',
+                footer2: '더 나은 북마크 관리에 집중'
+            },
+            'th': {
+                title: '📚 บุ๊กมาร์กของฉัน',
+                subtitle: 'เครื่องมือจัดการบุ๊กมาร์กที่เรียบง่าย มีประสิทธิภาพ และปลอดภัย<br>จัดระเบียบ URL ทั้งหมดของคุณ',
+                features_title: 'ฟีเจอร์หลัก',
+                feature1_title: 'การจัดการหมวดหมู่อัจฉริยะ',
+                feature1_desc: 'สร้างหมวดหมู่ได้อย่างอิสระ รองรับการลากและวาง จัดหมวดหมู่งาน การเรียน ชีวิต ความบันเทิงได้ง่าย',
+                feature2_title: 'ความเป็นส่วนตัวและความปลอดภัย',
+                feature2_desc: 'ปลดล็อกหมวดหมู่ส่วนตัวด้วย Face ID/ลายนิ้วมือ เข้ารหัสบุ๊กมาร์กที่ละเอียดอ่อนแยกต่างหาก',
+                feature3_title: 'ซิงค์ iCloud อัตโนมัติ',
+                feature3_desc: 'สำรองข้อมูลบนคลาวด์แบบเรียลไทม์ สลับอุปกรณ์ได้อย่างราบรื่น ไม่สูญหายบุ๊กมาร์ก',
+                feature4_title: 'แชร์ QR หลายบุ๊กมาร์ก',
+                feature4_desc: 'สร้างภาพ QR code ด้วยการแตะครั้งเดียว แชร์หลายบุ๊กมาร์กพร้อมกัน',
+                feature5_title: 'รองรับหลายภาษา',
+                feature5_desc: 'รองรับ 简体中文, 繁體中文, English, 日本語, 한국어, ไทย, Italiano, Deutsch',
+                feature6_title: 'ประสบการณ์ส่วนบุคคล',
+                feature6_desc: 'ปรับขนาดและสไตล์ฟอนต์ได้อย่างอิสระเพื่อสร้างอินเทอร์เฟซที่สบาย',
+                pricing_title: 'เลือกแผนของคุณ',
+                free_title: 'ฟรี',
+                free_price: '฿0',
+                free_feat1: '✓ บุ๊กมาร์กทั่วไป 20 รายการ',
+                free_feat2: '✓ บุ๊กมาร์กส่วนตัว 3 รายการ',
+                free_feat3: '✓ การจัดการหมวดหมู่พื้นฐาน',
+                free_feat4: '✓ ซิงค์ iCloud',
+                free_feat5: '✓ แชร์ QR code',
+                premium_title: 'พรีเมียม',
+                premium_price: 'อัปเกรด',
+                premium_feat1: '✓ บุ๊กมาร์กไม่จำกัด',
+                premium_feat2: '✓ หมวดหมู่ส่วนตัวไม่จำกัด',
+                premium_feat3: '✓ ธีมเพิ่มเติม',
+                premium_feat4: '✓ นำเข้า/ส่งออกเป็นชุด',
+                premium_feat5: '✓ การสนับสนุนลำดับความสำคัญ',
+                cta_title: 'เริ่มจัดระเบียบบุ๊กมาร์กของคุณ',
+                download_btn: 'ดาวน์โหลดบน App Store',
+                footer1: '© 2024 บุ๊กมาร์กของฉัน. เรียบง่าย สะอาด ไม่มีโฆษณา',
+                footer2: 'มุ่งเน้นการจัดการบุ๊กมาร์กที่ดีขึ้น'
+            },
+            'it': {
+                title: '📚 I miei segnalibri',
+                subtitle: 'Gestore di segnalibri semplice, efficiente e sicuro<br>Mantieni tutti i tuoi URL organizzati',
+                features_title: 'Funzionalità principali',
+                feature1_title: 'Gestione categorie intelligente',
+                feature1_desc: 'Crea categorie liberamente con ordinamento drag-and-drop per lavoro, studio, vita e intrattenimento',
+                feature2_title: 'Privacy e sicurezza',
+                feature2_desc: 'Sblocco Face ID/impronta digitale per categorie private, segnalibri sensibili crittografati',
+                feature3_title: 'Sincronizzazione automatica iCloud',
+                feature3_desc: 'Backup cloud in tempo reale, cambio dispositivo senza interruzioni, non perdere mai i tuoi segnalibri',
+                feature4_title: 'Condivisione QR multi-segnalibro',
+                feature4_desc: 'Genera immagini QR code con un tocco, condividi più segnalibri contemporaneamente',
+                feature5_title: 'Supporto multilingue',
+                feature5_desc: 'Supporta 简体中文, 繁體中文, English, 日本語, 한국어, ไทย, Italiano, Deutsch',
+                feature6_title: 'Esperienza personalizzata',
+                feature6_desc: 'Regola liberamente dimensione e stile del carattere per creare la tua interfaccia confortevole',
+                pricing_title: 'Scegli il tuo piano',
+                free_title: 'Gratuito',
+                free_price: '€0',
+                free_feat1: '✓ 20 segnalibri normali',
+                free_feat2: '✓ 3 segnalibri privati',
+                free_feat3: '✓ Gestione categorie base',
+                free_feat4: '✓ Sincronizzazione iCloud',
+                free_feat5: '✓ Condivisione QR code',
+                premium_title: 'Premium',
+                premium_price: 'Aggiorna',
+                premium_feat1: '✓ Segnalibri illimitati',
+                premium_feat2: '✓ Categorie private illimitate',
+                premium_feat3: '✓ Più temi',
+                premium_feat4: '✓ Importazione/esportazione batch',
+                premium_feat5: '✓ Supporto prioritario',
+                cta_title: 'Inizia a organizzare i tuoi segnalibri',
+                download_btn: 'Scarica su App Store',
+                footer1: '© 2024 I miei segnalibri. Semplice, pulito, senza pubblicità',
+                footer2: 'Concentrato su una migliore gestione dei segnalibri'
+            },
+            'de': {
+                title: '📚 Meine Lesezeichen',
+                subtitle: 'Einfacher, effizienter und sicherer Lesezeichen-Manager<br>Halten Sie alle Ihre URLs organisiert',
+                features_title: 'Kernfunktionen',
+                feature1_title: 'Intelligente Kategorienverwaltung',
+                feature1_desc: 'Erstellen Sie Kategorien frei mit Drag-and-Drop-Sortierung für Arbeit, Studium, Leben und Unterhaltung',
+                feature2_title: 'Datenschutz & Sicherheit',
+                feature2_desc: 'Face ID/Fingerabdruck-Entsperrung für private Kategorien, verschlüsselte sensible Lesezeichen',
+                feature3_title: 'iCloud Auto-Sync',
+                feature3_desc: 'Echtzeit-Cloud-Backup, nahtloser Gerätewechsel, verlieren Sie nie Ihre Lesezeichen',
+                feature4_title: 'Multi-Lesezeichen QR-Freigabe',
+                feature4_desc: 'Generieren Sie QR-Code-Bilder mit einem Tippen, teilen Sie mehrere Lesezeichen gleichzeitig',
+                feature5_title: 'Mehrsprachige Unterstützung',
+                feature5_desc: 'Unterstützt 简体中文, 繁體中文, English, 日本語, 한국어, ไทย, Italiano, Deutsch',
+                feature6_title: 'Personalisierte Erfahrung',
+                feature6_desc: 'Passen Sie Schriftgröße und -stil frei an, um Ihre komfortable Oberfläche zu erstellen',
+                pricing_title: 'Wählen Sie Ihren Plan',
+                free_title: 'Kostenlos',
+                free_price: '€0',
+                free_feat1: '✓ 20 normale Lesezeichen',
+                free_feat2: '✓ 3 private Lesezeichen',
+                free_feat3: '✓ Basis-Kategorienverwaltung',
+                free_feat4: '✓ iCloud-Synchronisierung',
+                free_feat5: '✓ QR-Code-Freigabe',
+                premium_title: 'Premium',
+                premium_price: 'Upgrade',
+                premium_feat1: '✓ Unbegrenzte Lesezeichen',
+                premium_feat2: '✓ Unbegrenzte private Kategorien',
+                premium_feat3: '✓ Mehr Themes',
+                premium_feat4: '✓ Batch-Import/-Export',
+                premium_feat5: '✓ Prioritäts-Support',
+                cta_title: 'Beginnen Sie mit der Organisation Ihrer Lesezeichen',
+                download_btn: 'Im App Store herunterladen',
+                footer1: '© 2024 Meine Lesezeichen. Einfach, sauber, werbefrei',
+                footer2: 'Fokussiert auf bessere Lesezeichenverwaltung'
+            }
+        };
+
+        function switchLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            const trans = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (trans[key]) {
+                    el.innerHTML = trans[key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        window.onload = function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            let defaultLang = 'zh-Hans';
+            if (userLang.startsWith('zh-TW') || userLang.startsWith('zh-HK')) {
+                defaultLang = 'zh-Hant';
+            } else if (userLang.startsWith('en')) {
+                defaultLang = 'en';
+            } else if (userLang.startsWith('ja')) {
+                defaultLang = 'ja';
+            } else if (userLang.startsWith('ko')) {
+                defaultLang = 'ko';
+            } else if (userLang.startsWith('th')) {
+                defaultLang = 'th';
+            } else if (userLang.startsWith('it')) {
+                defaultLang = 'it';
+            } else if (userLang.startsWith('de')) {
+                defaultLang = 'de';
+            }
+            document.getElementById('langSelect').value = defaultLang;
+            switchLanguage();
+        };
+    </script>
+</body>
+</html>
