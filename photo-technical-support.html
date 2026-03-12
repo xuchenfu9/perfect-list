@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>佳佳证件照 - 技术支持</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #dbe4f0;
+      --accent: #2087ff;
+      --accent-soft: #e8f2ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eaf4ff 0%, var(--bg) 220px);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .hero,
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(31, 41, 55, 0.08);
+    }
+
+    .hero {
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      padding: 28px;
+      margin-top: 18px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 19px; }
+
+    p { margin: 0 0 12px; }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .feature-item,
+    .faq-item,
+    .contact {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fbfdff;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f7faff;
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 20px 14px 40px;
+      }
+
+      .hero,
+      .section {
+        border-radius: 20px;
+        padding: 22px;
+      }
+
+      h1 { font-size: 28px; }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      thead { display: none; }
+      tr { border-bottom: 1px solid var(--line); }
+      td {
+        padding: 10px 0;
+        border: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">技术支持</div>
+      <h1>佳佳证件照 - 技术支持</h1>
+      <p class="meta">更新日期：2026年2月</p>
+      <p>佳佳证件照是一款专业的证件照制作应用，采用 AI 智能抠图技术，帮助您在家轻松制作符合标准的证件照。</p>
+    </section>
+
+    <section class="section">
+      <h2>核心特点</h2>
+      <div class="feature-list">
+        <div class="feature-item">🤖 AI 智能抠图，一键去除背景</div>
+        <div class="feature-item">🎨 多种背景颜色可选（白、红、蓝、灰）</div>
+        <div class="feature-item">✨ 智能美颜，效果自然</div>
+        <div class="feature-item">🔒 本地处理，保护隐私</div>
+        <div class="feature-item">📐 14 种常用证件规格</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>支持的证件规格</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>规格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>标准尺寸</td>
+            <td>一寸、二寸、小一寸、大一寸</td>
+          </tr>
+          <tr>
+            <td>证件类型</td>
+            <td>身份证、护照、驾驶证、社保卡</td>
+          </tr>
+          <tr>
+            <td>签证规格</td>
+            <td>美国签证、日本签证、韩国签证、英国签证</td>
+          </tr>
+          <tr>
+            <td>其他用途</td>
+            <td>考试报名</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>常见问题</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>1. 如何制作证件照？</h3>
+          <p>打开 App → 拍照或从相册选择照片 → 选择证件规格 → 调整背景和美颜 → 保存到相册。</p>
+        </div>
+        <div class="faq-item">
+          <h3>2. 照片会上传到服务器吗？</h3>
+          <p>不会。所有照片处理都在您的设备本地完成，我们不会上传、存储或分享您的任何照片数据，完全保护您的隐私安全。</p>
+        </div>
+        <div class="faq-item">
+          <h3>3. 为什么抠图效果不理想？</h3>
+          <p>为获得最佳效果，建议：</p>
+          <ul>
+            <li>选择光线充足的环境拍摄</li>
+            <li>背景尽量简洁，与人物有明显区分</li>
+            <li>人像清晰，避免模糊或遮挡</li>
+          </ul>
+        </div>
+        <div class="faq-item">
+          <h3>4. 支持哪些设备？</h3>
+          <p>支持 iOS 15.0 及以上系统的 iPhone。</p>
+        </div>
+        <div class="faq-item">
+          <h3>5. 照片可以用于正式证件吗？</h3>
+          <p>本应用生成的照片符合标准证件照规格，可用于大多数在线提交场景。如需用于重要证件（如护照、签证），建议根据具体要求确认是否符合规定。</p>
+        </div>
+        <div class="faq-item">
+          <h3>6. 如何调整美颜效果？</h3>
+          <p>在编辑页面，您可以通过滑块调整美颜强度，实时预览效果，选择最满意的程度后保存。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>联系我们</h2>
+      <div class="contact">
+        <p>如果您在使用过程中遇到任何问题，或有任何建议和反馈，欢迎通过以下方式联系我们：</p>
+        <p><strong>邮箱：</strong><a href="mailto:panxiaosen@163.com">panxiaosen@163.com</a></p>
+        <p>我们会在 1-3 个工作日内回复您的邮件。</p>
+        <p><strong>本地隐私文档：</strong><a href="photo-privacy-policy.html">photo-privacy-policy.html</a></p>
+        <p><strong>来源页面：</strong><a href="https://www.yuque.com/yuque-1omv6/kb/rheol86x4e5onxpb">语雀技术支持文档</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>版本信息</h2>
+      <p><strong>当前版本：</strong>1.0.0</p>
+      <p><strong>更新日期：</strong>2026年2月</p>
+      <p>感谢您使用佳佳证件照！</p>
+    </section>
+
+    <footer>
+      <p>© 2026 佳佳证件照 版权所有</p>
+    </footer>
+  </main>
+</body>
+</html>
